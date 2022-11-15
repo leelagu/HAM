@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WebApiService } from './web-api.service';
 
-var apiUrl = "http://localhost:8100/";
+var apiUrl = "http://localhost:4200";
 
 var httpLink = {
   getAllConnection: apiUrl + "/api/connection/getAllConnection",

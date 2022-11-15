@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpProviderService } from '../Service/http-provider.service';
+import { WebApiService } from '../Service/web-api.service';
 
 @Component({
   selector: 'app-view-connection',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewConnectionComponent implements OnInit {
 
-  constructor() { }
-
+  connectionId: any;
+  connectionDetail : any= [];
+   
+  constructor(public webApiService: WebApiService, private route: ActivatedRoute, private httpProvider : HttpProviderService) { }
+  
   ngOnInit(): void {
+    this.connectionId = this.route.snapshot.params['connectionId'];      
+    this.getConnectionDetailById();
+  }
+
+  getConnectionDetailById() {       
+    this.httpProvider.getConnectionDetailById(this.connectionId).subscribe((data : any) => {      
+      if (data != null && data.body != null) {
+        var resultData = data.body;
+        if (resultData) {
+          this.connectionDetail = resultData;
+        }
+      }
+    },
+    (error :any)=> { }); 
   }
 
 }

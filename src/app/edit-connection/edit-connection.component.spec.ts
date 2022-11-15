@@ -12,6 +12,9 @@ describe('EditConnectionComponent', () => {
     })
     .compileComponents();
 
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(EditConnectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

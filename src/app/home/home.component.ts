@@ -10,7 +10,7 @@ import { HttpProviderService } from '../Service/http-provider.service';
   <div class="modal-header">
     <h5 class="modal-title" id="modal-title">Delete Confirmation</h5>
     <button type="button" class="btn close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">×</span>
+      <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">

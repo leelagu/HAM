@@ -11,7 +11,9 @@ describe('ViewConnectionComponent', () => {
       declarations: [ ViewConnectionComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ViewConnectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
